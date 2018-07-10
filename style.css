@@ -85,23 +85,45 @@ input:focus ~ .input-border{
     background-color: transparent;
     border-bottom: 1px solid #D9D9D9;
     order: 2;
-  }
+    outline: none;
+}
+.dropdown-input:focus ~ .input-border{
+    width: 100%;
+    background-color: #008AE2;
+}
+.dropdown-input:focus ~ label {
+    color: #008AE2;
+}
 .dropdown-input:after {
-    content: '▾';
-    color: #424242;
+    content: url(arrowDown_16.png);
+    height: 16px;
+    width: 16px;
     position: absolute;
     right: 10px;
-    top: 8px;
+    top: 11px;
     z-index: 1;
 }
 .input-wrap .dropdown-list {
-    display: inline-block;
-    background-color: red;
+    display: none;
+    background-color: white;
     position: absolute;
     list-style: none;
     top: 56px;
     width: 100%;
+    z-index: 3;
+    border-radius: 5px;
+    box-shadow: 0px 7px 25px -4px rgba(15, 12, 41, 0.3);
   }
-  .active {
+.input-wrap .dropdown-list li {
+    padding: 11px;
+    cursor: pointer;
+}
+.input-wrap .dropdown-list li:hover {
+    background-color: #DCDCDC;
+}
+.input-wrap .dropdown-list li:last-child:hover{
+    border-radius: 0 0 5px 5px;
+}
+.input-wrap .active {
     display: inline-block;
 }
