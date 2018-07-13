@@ -8,7 +8,7 @@ let indexCurrentInput;
 dropdownInput.forEach(input => input.addEventListener("click", openDropdown));
 dropdownInput.forEach(input => input.addEventListener("focus", openDropdown));
 dropdownInput.forEach(input => input.addEventListener("focusout", closeDropdown));
-currentListItems.forEach(item => item.addEventListener("mousedown", listItemTextChange));
+currentListItems.forEach(item => item.addEventListener("mousedown", listItemClick));
 currentListItems.forEach(item => item.addEventListener("mouseover", listItemHover));
 currentListItems.forEach(item => item.addEventListener("mouseout", listItemHoverOut));
 
@@ -21,6 +21,7 @@ function openDropdown() {
     //console.log(dropdownList.item(indexCurrentInput));
     //console.log(dropdownInput.item(indexCurrentInput).textContent);
     //console.log(dropdownList.item(indexCurrentInput));
+    //console.log(dropdownList.item(indexCurrentInput).querySelectorAll("li"));
 }
 function closeDropdown(e) {
     e.target.nextElementSibling.nextElementSibling.classList.remove("activeList");
@@ -31,15 +32,27 @@ function listItemHover() {
 function listItemHoverOut() {
     this.classList.remove("hoverList");
 }
-function listItemTextChange() {
+function listItemClick() {
     const currentInput = dropdownInput.item(indexCurrentInput);
-    if (this.textContent !== "Clear") { 
+    const listItems = dropdownList.item(indexCurrentInput).querySelectorAll("li");
+
+    if (this.textContent !== "Clear") {
         currentInput.textContent = this.textContent;
+        clearDropdownSelections(listItems);
         currentInput.classList.add("active-input");
         this.classList.add("active-item");
     } else {
         currentInput.textContent = "Select item";
         currentInput.classList.remove("active-input");
         this.classList.remove("active-item");
+        clearDropdownSelections(listItems);
     }
+}
+
+function clearDropdownSelections(listItems) { 
+    listItems.forEach(function(item) {
+        if (item.classList.contains("active-item")) { 
+            item.classList.remove("active-item");
+        }
+    });
 }

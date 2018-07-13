@@ -112,7 +112,8 @@ input:focus ~ .input-border{
     z-index: 1;
 }
 .input-wrap .dropdown-list {
-    display: none;
+    visibility: hidden;
+    opacity: 0;
     background-color: white;
     position: absolute;
     list-style: none;
@@ -121,6 +122,7 @@ input:focus ~ .input-border{
     z-index: 3;
     border-radius: 5px;
     box-shadow: 0px 7px 25px -4px rgba(15, 12, 41, 0.3);
+    transition: all 0.3s;
   }
 .dropdown-list .clear {
     color: red;
@@ -138,7 +140,8 @@ input:focus ~ .input-border{
     border-radius: 0 0 5px 5px;
 }
 .input-wrap .activeList {
-    display: inline-block;
+    visibility: visible;
+    opacity: 1;
 }
 .dropdown-list .active-item {
     background-color: #008AE2;
