@@ -147,3 +147,58 @@ input:focus ~ .input-border{
     background-color: #008AE2;
     color: white;
 }
+
+
+.input-wrap-radio {
+    font-size: 16px;
+    color: #323D44;
+    font-style: normal;
+    display: block;
+    position: relative;
+    padding-left: 32px;
+    margin-bottom: 24px;
+    margin-top: 10px;
+
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.input-wrap-radio input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    top: -8px;
+}
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: white;
+    border-radius: 50%;
+    border: 1px solid #BCBCBC;
+}
+.input-wrap-radio input:checked ~ .checkmark {
+    background-color: #008AE2;
+    border: 1px solid #008AE2;
+}
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+.input-wrap-radio input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.input-wrap-radio .checkmark:after {
+ 	top: 6px;
+	left: 6px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
