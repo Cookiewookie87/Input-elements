@@ -14,14 +14,7 @@ currentListItems.forEach(item => item.addEventListener("mouseout", listItemHover
 
 function openDropdown() {
     indexCurrentInput = dropdownInputArr.indexOf(this);
-
     dropdownList.item(indexCurrentInput).classList.add("activeList");
-
-    //console.log(dropdownInput.item(indexCurrentInput));
-    //console.log(dropdownList.item(indexCurrentInput));
-    //console.log(dropdownInput.item(indexCurrentInput).textContent);
-    //console.log(dropdownList.item(indexCurrentInput));
-    //console.log(dropdownList.item(indexCurrentInput).querySelectorAll("li"));
 }
 function closeDropdown(e) {
     e.target.nextElementSibling.nextElementSibling.classList.remove("activeList");
@@ -55,4 +48,19 @@ function clearDropdownSelections(listItems) {
             item.classList.remove("active-item");
         }
     });
+}
+
+// RADIO BUTTON
+const radioBTNS = document.querySelectorAll(".radioBTN");
+let setCheck;
+
+radioBTNS.forEach(btn => btn.addEventListener("click", radioClick));
+
+function radioClick() { 
+    if(setCheck != this) {
+        setCheck = this;
+    } else {
+        this.checked = false;
+        setCheck = null;
+    }
 }

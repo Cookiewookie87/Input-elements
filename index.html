@@ -7,8 +7,8 @@
   <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
 </head>
 <body>
-
     <div class="container">
+        
         <section class="section-text-input">
             <h2>Text input</h2>
             <form>
@@ -71,22 +71,23 @@
                 </ul>
                 <span class="input-border"></span>
             </div>
-
         </section>
     
-
         <section class="section-dropdown">
             <h2>Radio buttons</h2>
-            <label for="dropdown-input">Label</label>
-            <label class="input-wrap-radio">One
-                <input type="radio" name="radio">
-                <span class="checkmark"></span>
-            </label>
-            <label class="input-wrap-radio">One
-                <input type="radio" name="radio">
-                <span class="checkmark"></span>
-            </label>
+            <label>Label</label>
+            <div class="input-wrap">
+                <label class="input-wrap-radio">Item 1
+                    <input type="radio" name="radio" class="radioBTN">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="input-wrap-radio">Item 2
+                    <input type="radio" name="radio" class="radioBTN">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
         </section>
+
     </div>
     <script src="script.js"></script>
 </body>

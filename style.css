@@ -128,7 +128,6 @@ input:focus ~ .input-border{
     color: red;
     border-bottom: 1px solid #D9D9D9;
 }
-
 .input-wrap .dropdown-list li {
     padding: 11px;
     cursor: pointer;
@@ -148,7 +147,7 @@ input:focus ~ .input-border{
     color: white;
 }
 
-
+/* ----RADIO BUTTON---- */
 .input-wrap-radio {
     font-size: 16px;
     color: #323D44;
@@ -193,7 +192,6 @@ input:focus ~ .input-border{
 .input-wrap-radio input:checked ~ .checkmark:after {
     display: block;
 }
-
 .input-wrap-radio .checkmark:after {
  	top: 6px;
 	left: 6px;
