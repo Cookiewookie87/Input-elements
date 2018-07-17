@@ -147,8 +147,9 @@ input:focus ~ .input-border{
     color: white;
 }
 
-/* ----RADIO BUTTON---- */
-.input-wrap-radio {
+/* ----RADIO BUTTON & CHECKBOX---- */
+.input-wrap-radio,
+.input-wrap-checkbox {
     font-size: 16px;
     color: #323D44;
     font-style: normal;
@@ -164,13 +165,14 @@ input:focus ~ .input-border{
     -ms-user-select: none;
     user-select: none;
 }
-.input-wrap-radio input {
+.input-wrap-radio input,
+.input-wrap-checkbox input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
     top: -8px;
 }
-.checkmark {
+.input-wrap-radio .checkmark {
     position: absolute;
     top: 0;
     left: 0;
@@ -180,16 +182,29 @@ input:focus ~ .input-border{
     border-radius: 50%;
     border: 1px solid #BCBCBC;
 }
-.input-wrap-radio input:checked ~ .checkmark {
+.input-wrap-checkbox .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: white;
+    border-radius: 20%;
+    border: 1px solid #BCBCBC;
+}
+.input-wrap-radio input:checked ~ .checkmark,
+.input-wrap-checkbox input:checked ~ .checkmark {
     background-color: #008AE2;
     border: 1px solid #008AE2;
 }
-.checkmark:after {
+.input-wrap-radio .checkmark:after,
+.input-wrap-checkbox .checkmark:after{
     content: "";
     position: absolute;
     display: none;
 }
-.input-wrap-radio input:checked ~ .checkmark:after {
+.input-wrap-radio input:checked ~ .checkmark:after,
+.input-wrap-checkbox input:checked ~ .checkmark:after {
     display: block;
 }
 .input-wrap-radio .checkmark:after {
@@ -199,4 +214,16 @@ input:focus ~ .input-border{
 	height: 8px;
 	border-radius: 50%;
 	background: white;
+}
+.input-wrap-checkbox .checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 4px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 4px 4px 0;
+    border-radius: 3px;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
